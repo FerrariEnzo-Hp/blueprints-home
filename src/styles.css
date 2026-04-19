@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -19,13 +20,23 @@
  */
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 20px);
+  --radius-4xl: calc(var(--radius) + 28px);
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-300: var(--brand-300);
+  --color-brand-500: var(--brand-500);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-brand-950: var(--brand-950);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -62,26 +73,48 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --radius: 0.25rem;
+
+  /* Brand monochrome blue palette built from #09193B */
+  --brand-950: oklch(0.18 0.06 264);   /* #09193B core */
+  --brand-900: oklch(0.24 0.07 264);
+  --brand-800: oklch(0.32 0.08 262);
+  --brand-700: oklch(0.42 0.09 258);
+  --brand-500: oklch(0.62 0.11 245);
+  --brand-300: oklch(0.82 0.06 235);
+  --brand-100: oklch(0.94 0.02 235);
+  --brand-50:  oklch(0.98 0.008 235);
+
+  --background: var(--brand-950);
+  --foreground: oklch(0.96 0.012 235);
+  --card: oklch(0.22 0.065 264);
+  --card-foreground: oklch(0.96 0.012 235);
+  --popover: oklch(0.22 0.065 264);
+  --popover-foreground: oklch(0.96 0.012 235);
+  --primary: oklch(0.78 0.09 232);
+  --primary-foreground: var(--brand-950);
+  --secondary: oklch(0.28 0.07 263);
+  --secondary-foreground: oklch(0.94 0.02 235);
+  --muted: oklch(0.26 0.06 263);
+  --muted-foreground: oklch(0.72 0.04 240);
+  --accent: oklch(0.42 0.09 258);
+  --accent-foreground: oklch(0.96 0.012 235);
+  --destructive: oklch(0.6 0.22 27);
+  --destructive-foreground: oklch(0.98 0.003 247);
+  --border: oklch(0.36 0.06 258 / 50%);
+  --input: oklch(0.32 0.07 260 / 60%);
+  --ring: oklch(0.62 0.11 245);
+
+  /* Tokens */
+  --gradient-hero: radial-gradient(ellipse at top, oklch(0.32 0.08 262) 0%, oklch(0.18 0.06 264) 60%);
+  --gradient-line: linear-gradient(90deg, transparent, oklch(0.62 0.11 245 / 0.6), transparent);
+  --shadow-glow: 0 20px 80px -20px oklch(0.62 0.11 245 / 0.35);
+  --shadow-card: 0 1px 0 oklch(0.62 0.11 245 / 0.15) inset, 0 20px 40px -30px oklch(0 0 0 / 0.6);
+  --grid-line: oklch(0.62 0.11 245 / 0.08);
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -137,8 +170,64 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-display);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: oklch(0.62 0.11 245 / 0.4);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+  .text-gradient {
+    background: linear-gradient(180deg, oklch(0.98 0.012 235), oklch(0.78 0.09 232));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .bg-grid-sm {
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 16px 16px;
+  }
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .divider-line {
+    height: 1px;
+    background: var(--gradient-line);
+  }
+  .blueprint-border {
+    border: 1px solid oklch(0.62 0.11 245 / 0.25);
+    background:
+      linear-gradient(oklch(0.22 0.065 264 / 0.6), oklch(0.22 0.065 264 / 0.6)),
+      radial-gradient(circle at 1px 1px, oklch(0.62 0.11 245 / 0.18) 1px, transparent 0);
+    background-size: auto, 14px 14px;
   }
 }
