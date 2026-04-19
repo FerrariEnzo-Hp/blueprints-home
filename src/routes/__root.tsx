@@ -34,6 +34,12 @@ export const Route = createRootRoute({
       { name: "author", content: "VOLTLINE" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "VOLTLINE — Projetos Elétricos Residenciais" },
+      { name: "twitter:title", content: "VOLTLINE — Projetos Elétricos Residenciais" },
+      { property: "og:description", content: "Engenharia elétrica residencial conforme NBR 5410." },
+      { name: "twitter:description", content: "Engenharia elétrica residencial conforme NBR 5410." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8814a9da-e426-42a9-ad5d-ee231c278c49/id-preview-ba3f96a3--d9b72030-8f9d-4633-a552-083a3b589d45.lovable.app-1776568442872.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8814a9da-e426-42a9-ad5d-ee231c278c49/id-preview-ba3f96a3--d9b72030-8f9d-4633-a552-083a3b589d45.lovable.app-1776568442872.png" },
     ],
     links: [
       {
