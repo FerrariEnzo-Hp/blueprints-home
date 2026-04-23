@@ -137,8 +137,8 @@ function HomePage() {
           </div>
 
           <p className="mt-8 font-mono text-xs text-muted-foreground">
-            * Valores referentes ao projeto elétrico por ambiente. ART, memorial e
-            diagramas inclusos. Consulte condições para projetos completos.
+            * Valores referentes ao projeto elétrico por ambiente. Consulte
+            condições para projetos completos.
           </p>
         </div>
       </section>
