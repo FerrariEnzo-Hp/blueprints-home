@@ -25,12 +25,6 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const stats = [
-  { v: "320+", l: "Projetos entregues" },
-  { v: "100%", l: "Conformidade NBR" },
-  { v: "12 anos", l: "De experiência" },
-  { v: "48h", l: "Resposta média" },
-];
 
 const pricing = [
   { icon: BedDouble, title: "Quarto", price: "220,00", desc: "Projeto elétrico completo por ambiente." },
@@ -86,18 +80,6 @@ function HomePage() {
               </Link>
             </div>
 
-            <div className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-sm bg-border/50 md:grid-cols-4">
-              {stats.map((s) => (
-                <div key={s.l} className="bg-background/80 px-5 py-6 backdrop-blur">
-                  <div className="font-display text-3xl font-semibold text-foreground">
-                    {s.v}
-                  </div>
-                  <div className="mt-1 font-mono text-[11px] uppercase tracking-widest text-muted-foreground">
-                    {s.l}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
