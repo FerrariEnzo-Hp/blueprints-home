@@ -39,7 +39,6 @@ export function SiteFooter() {
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-foreground/80">
               <li>contato@amtriz.com.br</li>
-              <li>(11) 90000-0000</li>
             </ul>
           </div>
         </div>
