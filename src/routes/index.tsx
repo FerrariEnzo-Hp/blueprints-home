@@ -7,11 +7,11 @@ import { SectionLabel } from "@/components/section-label";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AMTRIZ — Projetos Elétricos Residenciais conforme NBR 5410" },
+      { title: "AMTRIZ — Projetos Elétricos Residenciais" },
       {
         name: "description",
         content:
-          "Projetos elétricos residenciais executados por engenheiros, com ART, memorial e diagramas conforme a NBR 5410. Segurança e eficiência para sua casa.",
+          "Projetos elétricos residenciais executados por engenheiros. Segurança e eficiência para sua casa.",
       },
       { property: "og:title", content: "AMTRIZ — Projetos Elétricos Residenciais" },
       {

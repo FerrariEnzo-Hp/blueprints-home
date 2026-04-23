@@ -17,8 +17,8 @@ export function SiteFooter() {
               <span className="text-muted-foreground">/ELÉTRICA</span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-              Projetos elétricos residenciais conforme NBR 5410. Segurança,
-              eficiência e documentação técnica completa.
+              Projetos elétricos residenciais com segurança e eficiência para
+              sua casa.
             </p>
           </div>
 
@@ -40,14 +40,12 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm text-foreground/80">
               <li>contato@amtriz.com.br</li>
               <li>(11) 90000-0000</li>
-              <li>São Paulo · SP</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border/60 pt-6 font-mono text-xs text-muted-foreground md:flex-row md:items-center">
           <span>© {new Date().getFullYear()} AMTRIZ Engenharia Elétrica</span>
-          <span>CREA · NBR 5410 · NR-10</span>
         </div>
       </div>
     </footer>

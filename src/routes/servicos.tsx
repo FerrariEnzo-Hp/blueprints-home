@@ -10,7 +10,7 @@ export const Route = createFileRoute("/servicos")({
       {
         name: "description",
         content:
-          "Projeto elétrico completo, luminotécnica, energia solar, automação e laudo técnico residencial conforme NBR 5410.",
+          "Projeto elétrico residencial e luminotécnica para sua casa.",
       },
       { property: "og:title", content: "Serviços de Projeto Elétrico Residencial" },
       {
@@ -26,14 +26,14 @@ const services = [
   {
     icon: FileCheck2,
     title: "Projeto elétrico residencial",
-    desc: "Planta baixa com pontos elétricos, diagrama unifilar, quadro de cargas, memorial descritivo e ART.",
-    items: ["Plantas em CAD/PDF", "Memorial descritivo", "Quadro de cargas", "Emissão de ART"],
+    desc: "Planejamento elétrico completo da sua residência, do dimensionamento à execução.",
+    items: ["Pontos elétricos", "Quadro de cargas", "Dimensionamento", "Acompanhamento"],
   },
   {
     icon: Lightbulb,
     title: "Luminotécnica",
     desc: "Cálculo profissional de iluminação por ambiente, com simulação de cenários e eficiência energética.",
-    items: ["Cálculo de lux", "Cenários de iluminação", "Especificação de luminárias", "Plantas de teto"],
+    items: ["Cálculo de iluminação", "Cenários de iluminação", "Especificação de luminárias", "Plantas de teto"],
   },
 ];
 
@@ -49,8 +49,7 @@ function ServicesPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             Atuamos em todas as etapas do projeto — do dimensionamento inicial
-            ao comissionamento final — garantindo segurança e conformidade
-            normativa.
+            à execução — garantindo segurança e eficiência.
           </p>
         </div>
       </section>
