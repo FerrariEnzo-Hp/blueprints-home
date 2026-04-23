@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Phone, MapPin, MessageCircle, Send } from "lucide-react";
+import { MessageCircle, Send as TelegramIcon, Send } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { SectionLabel } from "@/components/section-label";
 
@@ -24,7 +24,30 @@ export const Route = createFileRoute("/contato")({
 });
 
 const EMAIL = "contato@amtriz.com.br";
-const PHONE_DIGITS = "5511900000000";
+
+const contacts = [
+  {
+    name: "Enzo Ferrari",
+    role: "Suporte técnico",
+    display: "(21) 98200-9835",
+    waDigits: "5521982009835",
+    tgDigits: "+5521982009835",
+  },
+  {
+    name: "Miguel Euzébio",
+    role: "Vendas",
+    display: "(21) 96538-5263",
+    waDigits: "5521965385263",
+    tgDigits: "+5521965385263",
+  },
+  {
+    name: "Luis Gustavo",
+    role: "Jurídico",
+    display: "(21) 98739-8550",
+    waDigits: "5521987398550",
+    tgDigits: "+5521987398550",
+  },
+];
 
 function ContactPage() {
   const [form, setForm] = useState({
@@ -72,73 +95,49 @@ ${form.message}`;
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1fr_1.2fr]">
           {/* Info */}
           <div className="space-y-4">
-            <SectionLabel index="02">Canais diretos</SectionLabel>
+            <SectionLabel index="02">Fale com nossa equipe</SectionLabel>
+            <p className="text-sm text-muted-foreground">
+              Escolha o setor desejado e entre em contato direto via WhatsApp
+              ou Telegram.
+            </p>
 
-            <a
-              href={`mailto:${EMAIL}`}
-              className="group flex items-start gap-4 rounded-sm border border-border/60 p-6 transition-colors hover:border-primary/50 hover:bg-secondary/30"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/20">
-                <Mail className="h-4 w-4 text-primary" />
-              </div>
-              <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  E-mail
+            {contacts.map((c) => (
+              <div
+                key={c.display}
+                className="rounded-sm border border-border/60 p-6"
+              >
+                <div className="font-mono text-[11px] uppercase tracking-widest text-primary">
+                  {c.role}
                 </div>
-                <div className="mt-1 font-display text-lg text-foreground group-hover:text-primary">
-                  {EMAIL}
+                <div className="mt-2 font-display text-xl font-semibold text-foreground">
+                  {c.name}
                 </div>
-              </div>
-            </a>
+                <div className="mt-1 font-mono text-sm text-muted-foreground">
+                  {c.display}
+                </div>
 
-            <a
-              href={`https://wa.me/${PHONE_DIGITS}`}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex items-start gap-4 rounded-sm border border-border/60 p-6 transition-colors hover:border-primary/50 hover:bg-secondary/30"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/20">
-                <MessageCircle className="h-4 w-4 text-primary" />
-              </div>
-              <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  WhatsApp
-                </div>
-                <div className="mt-1 font-display text-lg text-foreground group-hover:text-primary">
-                  (11) 90000-0000
-                </div>
-              </div>
-            </a>
-
-            <div className="flex items-start gap-4 rounded-sm border border-border/60 p-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/20">
-                <Phone className="h-4 w-4 text-primary" />
-              </div>
-              <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Telefone
-                </div>
-                <div className="mt-1 font-display text-lg text-foreground">
-                  (11) 4000-0000
-                </div>
-                <div className="mt-1 text-xs text-muted-foreground">Seg a Sex · 9h às 18h</div>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 rounded-sm border border-border/60 p-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/20">
-                <MapPin className="h-4 w-4 text-primary" />
-              </div>
-              <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                  Atendimento
-                </div>
-                <div className="mt-1 font-display text-lg text-foreground">São Paulo · SP</div>
-                <div className="mt-1 text-xs text-muted-foreground">
-                  Projetos remotos para todo o Brasil
+                <div className="mt-5 grid grid-cols-2 gap-3">
+                  <a
+                    href={`https://wa.me/${c.waDigits}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center justify-center gap-2 rounded-sm border border-border/60 bg-secondary/30 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-primary/10"
+                  >
+                    <MessageCircle className="h-4 w-4 text-primary" />
+                    WhatsApp
+                  </a>
+                  <a
+                    href={`https://t.me/${c.tgDigits}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center justify-center gap-2 rounded-sm border border-border/60 bg-secondary/30 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-primary/10"
+                  >
+                    <TelegramIcon className="h-4 w-4 text-primary" />
+                    Telegram
+                  </a>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
 
           {/* Form */}
