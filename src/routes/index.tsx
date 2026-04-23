@@ -161,7 +161,7 @@ function HomePage() {
                 to="/contato"
                 className="mt-8 inline-flex items-center gap-2 rounded-sm bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:opacity-90"
               >
-                Falar com um engenheiro
+                Entrar em contato
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
