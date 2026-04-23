@@ -1,14 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  FileCheck2,
-  ShieldCheck,
-  Lightbulb,
-  Gauge,
-  Sun,
-  Cable,
-  PlugZap,
-  Wrench,
-} from "lucide-react";
+import { FileCheck2, Lightbulb } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { SectionLabel } from "@/components/section-label";
 
@@ -39,46 +30,10 @@ const services = [
     items: ["Plantas em CAD/PDF", "Memorial descritivo", "Quadro de cargas", "Emissão de ART"],
   },
   {
-    icon: ShieldCheck,
-    title: "Adequação à NBR 5410",
-    desc: "Revisão e correção de instalações existentes para garantir conformidade com a norma técnica.",
-    items: ["DR e DPS", "Aterramento", "Dimensionamento de condutores", "Laudo técnico"],
-  },
-  {
     icon: Lightbulb,
     title: "Luminotécnica",
     desc: "Cálculo profissional de iluminação por ambiente, com simulação de cenários e eficiência energética.",
     items: ["Cálculo de lux", "Cenários de iluminação", "Especificação de luminárias", "Plantas de teto"],
-  },
-  {
-    icon: Sun,
-    title: "Energia solar fotovoltaica",
-    desc: "Dimensionamento e projeto de sistema fotovoltaico residencial on-grid integrado ao quadro.",
-    items: ["Dimensionamento", "Projeto da concessionária", "ART solar", "Análise de retorno"],
-  },
-  {
-    icon: PlugZap,
-    title: "Automação residencial",
-    desc: "Projeto preparado para automação de iluminação, persianas, climatização e cenas inteligentes.",
-    items: ["Infraestrutura", "Topologia de rede", "Especificação de módulos", "Integração futura"],
-  },
-  {
-    icon: Cable,
-    title: "Cabeamento estruturado",
-    desc: "Rede de dados, telefonia, TV e CFTV planejada junto ao projeto elétrico para zero retrabalho.",
-    items: ["Rack e patch panel", "Pontos lógicos", "CFTV", "TV e som"],
-  },
-  {
-    icon: Gauge,
-    title: "Recarga de veículo elétrico",
-    desc: "Circuito dedicado para wallbox residencial, com proteção e infraestrutura adequadas.",
-    items: ["Circuito dedicado", "Proteção DR-A", "Wallbox 7,4–22 kW", "Estudo de demanda"],
-  },
-  {
-    icon: Wrench,
-    title: "Acompanhamento de obra",
-    desc: "Visitas técnicas e suporte ao eletricista para garantir a fiel execução do projeto.",
-    items: ["Visitas técnicas", "Suporte remoto", "As-built", "Comissionamento"],
   },
 ];
 
@@ -102,7 +57,7 @@ function ServicesPage() {
 
       <section className="bg-background py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-px overflow-hidden rounded-sm bg-border/50 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px overflow-hidden rounded-sm bg-border/50 md:grid-cols-2">
             {services.map((s, i) => (
               <article key={s.title} className="bg-background p-8">
                 <div className="flex items-center justify-between">
