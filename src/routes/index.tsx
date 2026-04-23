@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, FileCheck2, Lightbulb, Gauge } from "lucide-react";
+import { ArrowRight, BedDouble, Sofa, Bath, Trees, UtensilsCrossed } from "lucide-react";
 import heroImg from "@/assets/blueprint-hero.jpg";
 import { PageShell } from "@/components/page-shell";
 import { SectionLabel } from "@/components/section-label";
@@ -7,13 +7,13 @@ import { SectionLabel } from "@/components/section-label";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "VOLTLINE — Projetos Elétricos Residenciais conforme NBR 5410" },
+      { title: "AMTRIZ — Projetos Elétricos Residenciais conforme NBR 5410" },
       {
         name: "description",
         content:
           "Projetos elétricos residenciais executados por engenheiros, com ART, memorial e diagramas conforme a NBR 5410. Segurança e eficiência para sua casa.",
       },
-      { property: "og:title", content: "VOLTLINE — Projetos Elétricos Residenciais" },
+      { property: "og:title", content: "AMTRIZ — Projetos Elétricos Residenciais" },
       {
         property: "og:description",
         content: "Engenharia elétrica residencial com documentação técnica completa.",
@@ -32,27 +32,12 @@ const stats = [
   { v: "48h", l: "Resposta média" },
 ];
 
-const services = [
-  {
-    icon: FileCheck2,
-    title: "Projeto elétrico completo",
-    desc: "Plantas baixas, diagramas unifilares, quadro de cargas e memorial descritivo prontos para execução e aprovação.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Conformidade NBR 5410",
-    desc: "Dimensionamento de circuitos, DR, DPS e aterramento dentro das normas técnicas brasileiras vigentes.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Luminotécnica residencial",
-    desc: "Cálculo de iluminação por ambiente com foco em conforto visual, eficiência energética e cenários de uso.",
-  },
-  {
-    icon: Gauge,
-    title: "Eficiência & automação",
-    desc: "Projetos preparados para automação, energia solar e cargas futuras — sem retrabalho na obra.",
-  },
+const pricing = [
+  { icon: BedDouble, title: "Quarto", price: "220,00", desc: "Projeto elétrico completo por ambiente." },
+  { icon: Sofa, title: "Sala", price: "350,00", desc: "Iluminação, tomadas e pontos de TV/áudio." },
+  { icon: Bath, title: "Banheiro", price: "300,00", desc: "Circuitos com DR, chuveiro e ventilação." },
+  { icon: Trees, title: "Área de lazer", price: "470,00", desc: "Externa: piscina, churrasqueira e jardim." },
+  { icon: UtensilsCrossed, title: "Cozinha", price: "380,00", desc: "Cargas pesadas, bancada e eletrodomésticos." },
 ];
 
 function HomePage() {
@@ -117,47 +102,62 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES PREVIEW */}
+      {/* PRICING */}
       <section className="border-t border-border/60 bg-background py-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div className="max-w-2xl">
-              <SectionLabel index="02">O que fazemos</SectionLabel>
+              <SectionLabel index="02">Tabela de preços</SectionLabel>
               <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight md:text-5xl">
-                Engenharia técnica, do papel ao disjuntor.
+                Projeto elétrico por ambiente.
               </h2>
+              <p className="mt-4 text-muted-foreground">
+                Valores fixos por ambiente residencial. Combine os ambientes
+                conforme o seu projeto — sem surpresas no orçamento.
+              </p>
             </div>
             <Link
-              to="/servicos"
+              to="/contato"
               className="font-mono text-xs uppercase tracking-widest text-primary hover:underline"
             >
-              Todos os serviços →
+              Solicitar orçamento →
             </Link>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-sm bg-border/50 md:grid-cols-2">
-            {services.map((s, i) => (
+          <div className="mt-12 grid gap-px overflow-hidden rounded-sm bg-border/50 md:grid-cols-2 lg:grid-cols-3">
+            {pricing.map((p, i) => (
               <div
-                key={s.title}
-                className="group relative bg-background p-8 transition-colors hover:bg-secondary/30"
+                key={p.title}
+                className="group relative flex flex-col bg-background p-8 transition-colors hover:bg-secondary/30"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex h-12 w-12 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/20">
-                    <s.icon className="h-5 w-5 text-primary" />
+                    <p.icon className="h-5 w-5 text-primary" />
                   </div>
                   <span className="font-mono text-xs text-muted-foreground">
-                    0{i + 1}
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
                 <h3 className="mt-6 font-display text-xl font-semibold text-foreground">
-                  {s.title}
+                  {p.title}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {s.desc}
+                  {p.desc}
                 </p>
+                <div className="mt-6 flex items-baseline gap-1 border-t border-border/60 pt-5">
+                  <span className="font-mono text-xs text-muted-foreground">R$</span>
+                  <span className="font-display text-3xl font-semibold text-gradient">
+                    {p.price}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
+
+          <p className="mt-8 font-mono text-xs text-muted-foreground">
+            * Valores referentes ao projeto elétrico por ambiente. ART, memorial e
+            diagramas inclusos. Consulte condições para projetos completos.
+          </p>
         </div>
       </section>
 
