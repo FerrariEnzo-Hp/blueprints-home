@@ -6,13 +6,13 @@ import { CheckCircle2 } from "lucide-react";
 export const Route = createFileRoute("/sobre")({
   head: () => ({
     meta: [
-      { title: "Sobre — VOLTLINE Engenharia Elétrica" },
+      { title: "Sobre — AMTRIZ Engenharia Elétrica" },
       {
         name: "description",
         content:
           "Equipe de engenheiros eletricistas dedicada a projetos residenciais seguros, normativos e bem documentados.",
       },
-      { property: "og:title", content: "Sobre a VOLTLINE" },
+      { property: "og:title", content: "Sobre a AMTRIZ" },
       {
         property: "og:description",
         content: "Engenharia elétrica residencial com 12 anos de experiência.",
@@ -51,7 +51,7 @@ function AboutPage() {
       <section className="border-b border-border/60 bg-hero">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2 md:py-32">
           <div>
-            <SectionLabel index="01">Sobre a VOLTLINE</SectionLabel>
+            <SectionLabel index="01">Sobre a AMTRIZ</SectionLabel>
             <h1 className="mt-6 font-display text-5xl font-semibold leading-tight tracking-tight md:text-6xl">
               <span className="text-gradient">Engenharia</span> com critério
               técnico.

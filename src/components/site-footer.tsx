@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Zap } from "lucide-react";
+import logo from "@/assets/amtriz-logo.jpg";
 
 export function SiteFooter() {
   return (
@@ -8,10 +8,12 @@ export function SiteFooter() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 font-mono text-sm tracking-widest">
-              <span className="flex h-8 w-8 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/30">
-                <Zap className="h-4 w-4 text-primary" strokeWidth={2.5} />
-              </span>
-              <span className="text-foreground">VOLTLINE</span>
+              <img
+                src={logo}
+                alt="AMTRIZ"
+                className="h-9 w-9 rounded-sm object-contain ring-1 ring-primary/30"
+              />
+              <span className="text-foreground">AMTRIZ</span>
               <span className="text-muted-foreground">/ELÉTRICA</span>
             </div>
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
@@ -37,7 +39,7 @@ export function SiteFooter() {
               Contato
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-foreground/80">
-              <li>contato@voltline.com.br</li>
+              <li>contato@amtriz.com.br</li>
               <li>(11) 90000-0000</li>
               <li>São Paulo · SP</li>
             </ul>
@@ -45,7 +47,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border/60 pt-6 font-mono text-xs text-muted-foreground md:flex-row md:items-center">
-          <span>© {new Date().getFullYear()} VOLTLINE Engenharia Elétrica</span>
+          <span>© {new Date().getFullYear()} AMTRIZ Engenharia Elétrica</span>
           <span>CREA · NBR 5410 · NR-10</span>
         </div>
       </div>

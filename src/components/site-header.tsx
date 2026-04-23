@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/amtriz-logo.jpg";
 
 const links = [
   { to: "/", label: "Início" },
@@ -16,10 +17,12 @@ export function SiteHeader() {
     <header className="fixed top-0 z-50 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 font-mono text-sm tracking-widest">
-          <span className="flex h-8 w-8 items-center justify-center rounded-sm bg-primary/10 ring-1 ring-primary/30">
-            <Zap className="h-4 w-4 text-primary" strokeWidth={2.5} />
-          </span>
-          <span className="text-foreground">VOLTLINE</span>
+          <img
+            src={logo}
+            alt="AMTRIZ"
+            className="h-9 w-9 rounded-sm object-contain ring-1 ring-primary/30"
+          />
+          <span className="text-foreground">AMTRIZ</span>
           <span className="text-muted-foreground">/ELÉTRICA</span>
         </Link>
 

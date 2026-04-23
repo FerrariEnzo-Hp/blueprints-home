@@ -15,7 +15,7 @@ import { SectionLabel } from "@/components/section-label";
 export const Route = createFileRoute("/servicos")({
   head: () => ({
     meta: [
-      { title: "Serviços — Projetos Elétricos Residenciais | VOLTLINE" },
+      { title: "Serviços — Projetos Elétricos Residenciais | AMTRIZ" },
       {
         name: "description",
         content:

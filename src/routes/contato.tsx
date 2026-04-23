@@ -7,13 +7,13 @@ import { SectionLabel } from "@/components/section-label";
 export const Route = createFileRoute("/contato")({
   head: () => ({
     meta: [
-      { title: "Contato — Solicite seu Projeto Elétrico | VOLTLINE" },
+      { title: "Contato — Solicite seu Projeto Elétrico | AMTRIZ" },
       {
         name: "description",
         content:
-          "Fale com a VOLTLINE para orçamento de projeto elétrico residencial. Resposta em até 48h por e-mail ou WhatsApp.",
+          "Fale com a AMTRIZ para orçamento de projeto elétrico residencial. Resposta em até 48h por e-mail ou WhatsApp.",
       },
-      { property: "og:title", content: "Contato VOLTLINE" },
+      { property: "og:title", content: "Contato AMTRIZ" },
       {
         property: "og:description",
         content: "Solicite um orçamento de projeto elétrico residencial.",
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/contato")({
   component: ContactPage,
 });
 
-const EMAIL = "contato@voltline.com.br";
+const EMAIL = "contato@amtriz.com.br";
 const PHONE_DIGITS = "5511900000000";
 
 function ContactPage() {
