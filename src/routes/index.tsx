@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, BedDouble, Sofa, Bath, Trees, UtensilsCrossed } from "lucide-react";
 import heroImg from "@/assets/blueprint-hero.jpg";
 import { PageShell } from "@/components/page-shell";
 import { SectionLabel } from "@/components/section-label";
@@ -25,6 +25,14 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+
+const ambientes = [
+  { icon: BedDouble, title: "Quarto", desc: "Projeto elétrico completo por ambiente." },
+  { icon: Sofa, title: "Sala", desc: "Iluminação, tomadas e pontos de TV/áudio." },
+  { icon: Bath, title: "Banheiro", desc: "Circuitos com DR, chuveiro e ventilação." },
+  { icon: Trees, title: "Área de lazer", desc: "Externa: piscina, churrasqueira e jardim." },
+  { icon: UtensilsCrossed, title: "Cozinha", desc: "Cargas pesadas, bancada e eletrodomésticos." },
+];
 
 function HomePage() {
   return (
