@@ -37,8 +37,16 @@ export function SiteFooter() {
             <h4 className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
               Contato
             </h4>
-            <ul className="mt-4 space-y-2 text-sm text-foreground/80">
+            <ul className="mt-4 space-y-3 text-sm text-foreground/80">
               <li>amtriz0710@gmail.com</li>
+              <li>
+                <Link
+                  to="/contato"
+                  className="inline-flex items-center rounded-sm border border-border/60 bg-secondary/30 px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-colors hover:border-primary/50 hover:bg-primary/10"
+                >
+                  Entrar em contato
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
