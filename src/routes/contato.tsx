@@ -26,9 +26,9 @@ const contacts = [
   {
     name: "Enzo Ferrari",
     role: "Suporte técnico",
-    display: "(21) 98200-9835",
-    waDigits: "5521982009835",
-    tgDigits: "+5521982009835",
+    display: "(21) 97598-7141",
+    waDigits: "5521975987141",
+    tgDigits: "+5521975987141",
   },
   {
     name: "Miguel Euzébio",
