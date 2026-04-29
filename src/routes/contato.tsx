@@ -99,9 +99,9 @@ function ContactPage() {
                     WhatsApp
                   </a>
                   <a
-                    href={`https://t.me/${c.tgDigits}`}
+                    href={`https://t.me/${encodeURIComponent(c.tgDigits)}`}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
                     className="group inline-flex items-center justify-center gap-2 rounded-sm border border-border/60 bg-secondary/30 px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-primary/50 hover:bg-primary/10"
                   >
                     <TelegramIcon className="h-4 w-4 text-primary" />
